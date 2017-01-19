@@ -16,14 +16,19 @@
 	function getProducts($connection){
 		$sql = "SELECT * FROM products";
 		$result = mysqli_query($connection, $sql);
-		while( $row = mysqli_fetch_assoc() ){
+		while( $row = mysqli_fetch_assoc($result) ){
 			echo "<div class='product_box'<p>";
 				echo $row['nombre']. "<br>";
 				echo nl2br($row['descripción']). "<br>";
 				echo $row['fecha_salida']. "<br>";
 				echo $row['precio']. "<br>";
-				//echo "<option value='" . $row['moneda'] . "'>" . $row['name'] . "</option>";
-				echo "</p>";
+				if (isset($_POST['moneda'])) { 
+					$current = trim($_POST['moneda']);
+					echo $row['moneda'];
+				} else { 
+					$current=0; 
+				};
+			echo "</p>";
 		}
 	}
 ?>
