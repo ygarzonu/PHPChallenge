@@ -1,0 +1,10 @@
+Options -MultiViews
+
+ReWriteEngine On
+
+RewriteBase /phpchallenge/
+
+ReWriteCond %{REQUEST_FILENAME} !-d
+ReWriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
