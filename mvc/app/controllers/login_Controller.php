@@ -18,6 +18,15 @@
 				echo $e->getMessage();
 			}
 		}
+
+		if (isset($_POST['signupSubmit']) AND $_POST['signupSubmit'] == "Register") {
+			$info['name']		= $_POST['name'];
+			$info['lastname']	= $_POST['lastname'];
+			$info['username']	= $_POST['username'];
+			$info['password']	= $_POST['password'];
+
+			print_r($info);
+		}
 	}
 
 ?>

@@ -10,6 +10,8 @@
 	<div>
 		<form action="../controllers/login_Controller.php" method="POST">
 			<h1>Registrar nuevo usuario</h1>
+			<input type='text' name='name' placeholder='name'>
+			<input type='text' name='lastname' placeholder='lastname'>
 			<input type='text' name='username' placeholder='username'>
 			<input type='password' name='password' placeholder='password'>
 			<button type='submit' name='signupSubmit' value="Register">Registrar</button>
